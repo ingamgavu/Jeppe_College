@@ -14,11 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home2');
+    return view('welcome');
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
-
+//now to make a route group
+Route::group(['middleware'=>['auth']],function(){
+     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+});
 require __DIR__.'/auth.php';
