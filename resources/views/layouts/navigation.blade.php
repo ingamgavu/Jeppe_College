@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                         <img src="public/img/logo.jpg" width="70" height="70">
                     </a>
                 </div>
 
@@ -16,6 +16,34 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                @if(Auth::user()->hasRole('user'))
+                      {{-- Disclaimer Page --}}
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.disclaimer')" :active="request()->routeIs('dashboard.disclaimer')">
+                        {{ __('disclaimer') }}
+                    </x-nav-link>
+                </div>
+                 {{-- Biography page --}}
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.biography')" :active="request()->routeIs('dashboard.biography')">
+                        {{ __('biography') }}
+                    </x-nav-link>
+                </div>
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
+                        {{ __('myprofile') }}
+                    </x-nav-link>
+                </div>
+                @endif
+               @if(Auth::user()->hasRole('Admin'))
+                 {{-- Profile item --}}
+                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.post')" :active="request()->routeIs('dashboard.post')">
+                        {{ __('create New post') }}
+                    </x-nav-link>
+                </div>
+                @endif
+
             </div>
 
             <!-- Settings Dropdown -->

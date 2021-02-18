@@ -16,4 +16,16 @@ class DashboardController extends Controller
             return view('dashboard');
         }
     }
+    function myprofile(){
+        return view('myprofile');
+    }
+    function biography(){
+        return view('biography');
+    }
+    function disclaimer(){
+        return view('disclaimer');
+    }
+    public function post(){
+        return view('post');
+    }
 }
