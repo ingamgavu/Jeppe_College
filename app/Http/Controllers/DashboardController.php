@@ -19,6 +19,9 @@ class DashboardController extends Controller
     function myprofile(){
         return view('myprofile');
     }
+    function payment(){
+        return view('payment');
+    }
     function biography(){
         return view('biography');
     }

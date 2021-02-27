@@ -29,9 +29,15 @@
                         {{ __('biography') }}
                     </x-nav-link>
                 </div>
+                {{-- profile section --}}
                  <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard.myprofile')" :active="request()->routeIs('dashboard.myprofile')">
                         {{ __('myprofile') }}
+                    </x-nav-link>
+                </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('dashboard.payment')" :active="request()->routeIs('dashboard.payment')">
+                        {{ __('payment') }}
                     </x-nav-link>
                 </div>
                 @endif

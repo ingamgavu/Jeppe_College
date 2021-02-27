@@ -8,6 +8,6 @@ class pagesController extends Controller
 {
     //
     function home(){
-        return view('home2');
+        return view('welcome');
     }
 }

@@ -1,53 +1,33 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+
+<header class="lg:px-16 px-6 bg-white flex flex-wrap items-center lg:py-0 py-2">
+          <div class="flex-1 flex justify-between items-center">
+            <a href="/JeppeApp"><img src="public/img/jlogo.jpg" width="100" height="100"></a> 
+          </div>
+          <label for="menu-toggle" class="cursor-pointer lg:hidden block">
+               <i class="fa fa-bars" aria-hidden="true"></i>
+          </label>
+          <input type="checkbox" class="hidden" id="menu-toggle">
+          <div class="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
+                <nav>
+                   <ul class="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
+                       
+                       <li>
+                              <a href="#" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">
+                                  Support</a>
+                       </li>
+                        <li>
+                              <a href="/JeppeApp/register" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">
+                                  Register</a>
+                       </li>
+                        <li>
+                              <a href="/JeppeApp/login" class="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400">
+                                  Login</a>
+                    
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-                            
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+                   </ul>
+            
+                </nav>
+               
+          </div>
+        </div>
+       </header>

@@ -30,6 +30,8 @@ Route::group(['middleware' => ['auth', 'role:user']], function() {
     ->name('dashboard.myprofile');
     Route::get('/dashboard/biography', 'App\Http\Controllers\DashboardController@biography')
     ->name('dashboard.biography');
+      Route::get('/dashboard/payment', 'App\Http\Controllers\DashboardController@payment')
+    ->name('dashboard.payment');
 });
 //route for Admin users
 Route::group(['middleware' => ['auth', 'role:Admin']], function() { 

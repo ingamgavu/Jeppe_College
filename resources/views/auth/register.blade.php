@@ -1,8 +1,9 @@
+@include('inc.nav')
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-               <img src="public/img/logo.jpg" width="200" height="200">
+               <img src="public/img/jlogo.jpg" width="300" height="200">
             </a>
         </x-slot>
 
